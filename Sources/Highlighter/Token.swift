@@ -2,16 +2,22 @@
 //  Token.swift
 //  Highlighter
 //
-//  Created by Paul MacRory  on 08/02/2019.
+//  Created by pmacro on 08/02/2019.
 //
 
 import Foundation
 
+///
+/// Represents the position within a source file.
+///
 public struct Position: Codable {
   public let start: Int
   public let end: Int
 }
 
+///
+/// The possible `Token` types.
+///
 public enum TokenType: Int, Codable {
   case className
   case functionName
@@ -32,6 +38,9 @@ public enum TokenType: Int, Codable {
   case unknown
 }
 
+///
+/// A syntax token.
+///
 public struct Token: Codable {
   public let string: String
   public let tokenType: TokenType
